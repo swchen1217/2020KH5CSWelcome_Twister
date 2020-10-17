@@ -1,0 +1,23 @@
+body {
+    background-color: #ffe7ea;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.three-area {
+    margin: 0px 2px;
+    padding: 0px 12px;
+}
+
+.top-area {
+    margin-top: 0px;
+}
+
+.four-area {
+    border: 1px #ffffff solid;
+    display: inline-block;
+    text-align: center;
+}
+
+.bm {
+    font-size: 3em;
+}
