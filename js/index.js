@@ -1,7 +1,6 @@
 var default_color = "#b5b5b5"
 var flash_color = "#ffffff"
 var colors = ["#ea4335", "#fbbc05", "#4285f4", "#34a853"];
-var times = 20;
 var times_spin = 20;
 var delay_spin = 75;
 var times_flash = 3;
