@@ -86,23 +86,28 @@
 </div>
 <div class="columns" style="height: 10vh">
     <div class="column" style="display: inline-block;text-align: center;padding: 5px">
-        <button onclick="drawLots(1)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 1</span>
+        <button onclick="auto()" class="button is-warning" style="height: 58px;"><span style="font-size: 3em"
+                                                                                       id="b_auto">Auto</span>
         </button>
     </div>
     <div class="column" style="display: inline-block;text-align: center;padding: 5px">
-        <button onclick="drawLots(2)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 2</span>
+        <button onclick="single(1)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 1</span>
         </button>
     </div>
     <div class="column" style="display: inline-block;text-align: center;padding: 5px">
-        <button onclick="drawLots(3)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 3</span>
+        <button onclick="single(2)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 2</span>
+        </button>
+    </div>
+    <div class="column" style="display: inline-block;text-align: center;padding: 5px">
+        <button onclick="single(3)" class="button is-primary" style="height: 58px;"><span style="font-size: 3em">Player 3</span>
         </button>
     </div>
     <div class="column" style="display: inline-block;text-align: center;padding: 5px">
         <button onclick="reset()" class="button is-danger" style="height: 58px;"><span
                 style="font-size: 3em">All Reset</span></button>
     </div>
-    <div class="column" style="display: inline-block;text-align: center;">
-        <span><b>Design By Sz-Wei Chen<br>(FSSH Computer Science Club)</b></span>
+    <div class="column" style="display: inline-block;text-align: center;padding: 5px">
+        <b><span style="font-size: 4em;line-height: 58px;" id="s">0</span></b>
     </div>
 </div>
 </body>
