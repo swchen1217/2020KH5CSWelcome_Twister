@@ -3,8 +3,8 @@ var flash_color = "#ffffff"
 var colors = ["#ea4335", "#fbbc05", "#4285f4", "#34a853"];
 var times_spin = 20;
 var delay_spin = 75;
-var times_flash = 3;
-var delay_flash = 250;
+var times_flash = 20;
+var delay_flash = 300;
 var score = 0;
 var colorStatus = [[null, null, null, null], [null, null, null, null], [null, null, null, null]];
 var autoEnable = false;
@@ -14,7 +14,7 @@ function reset() {
     score = 0;
     document.getElementById('s').innerText = score;
     document.getElementById('b_auto').innerText = 'Auto';
-    for (var i = 1; i <= 3; i++) {
+    for (var i = 1; i <= 1; i++) {
         for (var j = 1; j <= 4; j++) {
             colorStatus[i - 1][j - 1] = -1;
             var mId = "c" + i + "_" + j;
@@ -26,7 +26,10 @@ function reset() {
 function single(id) {
     var p = Math.floor(Math.random() * 4);
     colorStatus[id - 1][p] = Math.floor(Math.random() * 4);
-    animation_spin(id);
+    //animation_spin(id);
+    for (var k = 4; k > 0; k--) {
+        document.getElementById("c" + id + "_" + k).style.backgroundColor = colors[colorStatus[id - 1][k - 1]] ?? default_color;
+    }
     animation_flash(id, p + 1);
 }
 
@@ -39,8 +42,7 @@ function auto() {
         document.getElementById('b_auto').innerText = 'Next';
         autoEnable = true;
     }
-    for (var i = 1; i <= 3; i++)
-        single(i);
+    single(1);
 }
 
 function animation_spin(id) {
@@ -57,14 +59,12 @@ function animation_spin(id) {
 }
 
 function animation_flash(id, position) {
-    window.setTimeout(function () {
-        for (let i = 0; i < times_flash * 2; i++) {
-            window.setTimeout(function () {
-                if (i % 2 == 0)
-                    document.getElementById("c" + id + "_" + position).style.backgroundColor = flash_color;
-                else
-                    document.getElementById("c" + id + "_" + position).style.backgroundColor = colors[colorStatus[id - 1][position - 1]] ?? default_color;
-            }, delay_flash / 2 * i);
-        }
-    }, delay_spin * times_spin);
+    for (let i = 0; i < times_flash * 2; i++) {
+        window.setTimeout(function () {
+            if (i % 2 == 0)
+                document.getElementById("c" + id + "_" + position).style.backgroundColor = flash_color;
+            else
+                document.getElementById("c" + id + "_" + position).style.backgroundColor = colors[colorStatus[id - 1][position - 1]] ?? default_color;
+        }, delay_flash / 2 * i);
+    }
 }
